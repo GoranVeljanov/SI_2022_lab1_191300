@@ -1,0 +1,157 @@
+#1 !--->
+#2 !--->
+#3 !--->
+#4.
+git clone https://github.com/GoranVeljanov/SI_2022_lab1_191300.git # Клонирање на репозиториумот.
+
+#5.
+nano shopping_list.txt # Креиреање на почетна текстуална датотека.
+git add . # Додавање на содржината.
+git commit -m 'Add 5 items to the shopping list' 
+git push # Прикачување на содржината
+
+#6.
+nano shopping_list.txt # Модифицирање на веќе креираната текстуална датотека.
+git add . # Додавање на содржината.
+git commit -m 'Add quantities to the items' # 
+git push # Прикачување на содржината
+
+#7
+git checkout -b branch1 # Креирање на гранка 1
+git checkout -b branch2 # Креирање на гранка 2
+
+
+#8 
+git log # Проверка на досегашните логови.
+
+commit 34b4e5edff6869f0593c61bd9839755601e5354a (HEAD -> master, origin/master, origin/HEAD, branch2, branch1)
+Author: Goran <g.veljanov@protonmail.com>
+Date:   Thu Mar 24 18:18:54 2022 +0100
+
+    Add quantities to the items.
+
+commit 1d3d6f6f0c2c150ba7c98984210c18b7b48c370e
+Author: Goran <g.veljanov@protonmail.com>
+Date:   Thu Mar 24 18:17:19 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit dea3572799a2ed82c104b113c598f0b7d5e12d33
+Author: Goran <95771607+GoranVeljanov@users.noreply.github.com>
+Date:   Thu Mar 24 18:10:12 2022 +0100
+
+    Initial commit
+
+
+#9
+	 # префрлање на гранка 1
+git push --setupstream origin branch1 # Прикачување на тековната гранка 1 на мастер.
+git checkout branch2 
+git push --setupstream origin branch2 # Прикачување на тековната гранка 2 на мастер.
+
+#10
+git checkout branch1 # Префрлање на гранка 1.
+
+#11
+nano shopping_list.txt # Модифицирање на текстуалната датотека.
+git add .
+git commit -m 'Change quantity of item #5'
+git push
+
+#12
+git checkout master
+
+#13
+nano shopping_list.txt
+git add .
+git commit -m 'Change quantity of item #2'
+git push
+
+#14
+git checkout branch1
+git push --setupstream origin branch1
+git checkout branch2
+git push --setupstream origin branch2
+
+#15
+git checkout branch2
+
+#16
+nano shopping_list.txt
+git add .
+git commit -m 'Modify item #4'
+git push
+
+#17
+commit 50fb1d33bfe9d456f26fb16db985d523d11898ea (HEAD -> branch2, origin/branch2)
+Author: Goran <g.veljanov@protonmail.com>
+Date:   Thu Mar 24 18:30:07 2022 +0100
+
+    <U+009D>Modify item #4
+
+commit 34b4e5edff6869f0593c61bd9839755601e5354a
+Author: Goran <g.veljanov@protonmail.com>
+Date:   Thu Mar 24 18:18:54 2022 +0100
+
+    Add quantities to the items.
+
+commit 1d3d6f6f0c2c150ba7c98984210c18b7b48c370e
+Author: Goran <g.veljanov@protonmail.com>
+Date:   Thu Mar 24 18:17:19 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit dea3572799a2ed82c104b113c598f0b7d5e12d33
+Author: Goran <95771607+GoranVeljanov@users.noreply.github.com>
+Date:   Thu Mar 24 18:10:12 2022 +0100
+
+    Initial commit
+
+
+
+#18
+nano shopping_list.txt
+git add .
+git commit -m '“Modify item #4 and add item #6'
+git push
+
+#19
+commit e5cec87839a286f6b92c15124ad12caf01523cc7 (HEAD -> branch2, origin/branch2)
+Author: Goran <g.veljanov@protonmail.com>
+Date:   Thu Mar 24 18:33:48 2022 +0100
+
+    Modify item #4 and add item #6
+
+commit 50fb1d33bfe9d456f26fb16db985d523d11898ea
+Author: Goran <g.veljanov@protonmail.com>
+Date:   Thu Mar 24 18:30:07 2022 +0100
+
+    <U+009D>Modify item #4
+
+commit 34b4e5edff6869f0593c61bd9839755601e5354a
+Author: Goran <g.veljanov@protonmail.com>
+Date:   Thu Mar 24 18:18:54 2022 +0100
+
+    Add quantities to the items.
+
+commit 1d3d6f6f0c2c150ba7c98984210c18b7b48c370e
+Author: Goran <g.veljanov@protonmail.com>
+Date:   Thu Mar 24 18:17:19 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit dea3572799a2ed82c104b113c598f0b7d5e12d33
+Author: Goran <95771607+GoranVeljanov@users.noreply.github.com>
+Date:   Thu Mar 24 18:10:12 2022 +0100
+
+    Initial commit
+
+#20
+git checkout master
+git merge branch1
+
+#21
+- Во чекор 21 се јави конфликт при извршување на наредбата git merge branch2.
+- Со помош на функциите git pull, git add . , git commit и git push гранка 1 се поврза на мастер со тоа
+автоматски после гранка 1 и гранка 2 се поврза на мастер со нејзините промени.
+- За да се изврши спојувањето беше употребена git merge функцијата.
